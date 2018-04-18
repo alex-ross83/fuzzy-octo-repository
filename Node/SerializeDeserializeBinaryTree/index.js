@@ -19,6 +19,7 @@ var deserialized = deserialize(serialized)
 console.log('deserialized= ' + JSON.stringify(deserialized));
 var actual = deserialized.left.left.val;
 
+//Need to refactorize the array check routine to a utils module
 if(actual == expectedResult){
   console.log('Success!');
 } else{
