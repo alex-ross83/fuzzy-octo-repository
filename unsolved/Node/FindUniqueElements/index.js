@@ -13,30 +13,6 @@ if(arraysEqual(actual, expectedResult)){
   console.log(actual);
 }
 
-function findUniqueElements(arr) {
-  //declare map
-  var mp = {};
-  //declare result object
-  var res = [];
-  //iterate over the elements of the array
-  for(var i = 0; i < arr.length; i++){
-    //if no property with the same name as the value has been assigned
-    //then it is the first time we are seeing this value
-    if(mp[arr[i]] == undefined){
-      mp[arr[i]] = 1;
-    } else{ //else we increment how many times we have seen it
-      mp[arr[i]] += 1;
-    }
-  }
-  //filter from map and pick only the uniques (count == 1)
-  for(var prop in mp){
-    if(mp[prop] == 1){
-      res.push(prop);
-    }
-  }
-  return res;
-}
-
 //Ignore, utility code to test array equality
 function arraysEqual(arr1, arr2) {
     if(arr1 == null || arr2 == null
@@ -50,4 +26,8 @@ function arraysEqual(arr1, arr2) {
     }
 
     return true;
+}
+
+function findUniqueElements(arr) {
+  //TODO: Implement here
 }
