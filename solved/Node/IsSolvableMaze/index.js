@@ -27,24 +27,26 @@ if(actual == expectedResult){
 
 function isSolvableMaze(x,y,input){
   var initialPoint = input[x][y];
-  console.log('Now in x: ' + x + ' , y: ' + y )
-  if(initialPoint != '0'){
-    console.log('Invalid position');
-    return false;
-  }
+  console.log('Now in x: ' + x + ' , y: ' + y + ": " + initialPoint)
   if(initialPoint == 'E'){
-    console.log('Invalid position');
+    console.log('Solved!');
     return true;
   }
-  if((input.length - 1) >= (x + 1)){
-    console.log('moving down')
+  //Can move down?
+  if((x + 1) < input.length){
+    console.log('checking moving down')
     //we can move down
-    return isSolvableMaze(x + 1, y, input);
+    if(isSolvableMaze(x + 1, y, input)){
+      return true;
+    }
   }
-  if(input[x].length -1 >= y + 1){
+  //can we move right?
+  if((y + 1) < input[x].length){
     console.log('moving right')
     //we can move right
-    return isSolvableMaze(x, y + 1, input);
+    if(isSolvableMaze(x, y + 1, input)){
+      return true;
+    }
   }
   return false;
 }
